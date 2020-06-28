@@ -8,22 +8,20 @@
   
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<craftbukkit.version>1.7.2-R0.4-SNAPSHOT</craftbukkit.version>
-		<preciousstones.version>10.0.5</preciousstones.version>
+		<spigot.version>1.16.1-R0.1-SNAPSHOT</spigot.version>
+		<preciousstones.version>15.0</preciousstones.version>
 		<dynmap.version>1.9</dynmap.version>
         <build.number>Unknown</build.number>
 	</properties>
 
 	<!-- Repositories --> 
 	<repositories>
-        <repository>
-            <id>elMakers</id>
+    	<repository>
+        	<id>elMakers</id>
             <url>http://maven.elmakers.com/repository/</url>
         </repository>
-		<repository>
-			<id>bukkit-repo</id>
-			<url>http://repo.bukkit.org/content/groups/public/</url>
-		</repository>
+		<!-- This adds the PreciousStones Maven repository to the build -->
+		<!-- https://github.com/marcelo-mason/PreciousStones/wiki/Developers-API  -->
 		<repository>
 	        <id>SacredCoding</id>
 	        <name>SacredCoding-releases</name>
@@ -34,17 +32,28 @@
     		<name>mikeprim</name>
     		<url>http://repo.mikeprimm.com/</url> 
     	</repository>
+
+		<!-- This adds the Spigot Maven repository to the build -->
+		<!-- https://www.spigotmc.org/wiki/spigot-maven/ -->
+    	<repository>
+    		<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+
 	</repositories> 
-	
+
+
 	<!-- Repositories -->
- 	<dependencies>
+	<dependencies>
+
+		<!--This adds the Spigot API artifact to the build -->
 		<dependency>
-			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>${craftbukkit.version}</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>	
+	    	<groupId>org.spigotmc</groupId>
+	        <artifactId>spigot-api</artifactId>
+	        <version>${spigot.version}</version>
+	        <scope>provided</scope>
+	    </dependency>
+
 		<dependency>
 			<groupId>net.sacredlabyrinth.Phaed</groupId>
 			<artifactId>PreciousStones</artifactId>
